@@ -1,0 +1,1307 @@
+
+import java.util.concurrent.ThreadLocalRandom;
+import javax.swing.JOptionPane;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author User
+ */
+public class framettt extends javax.swing.JFrame {
+
+    /**
+     * Creates new form framettt
+     */
+    int player1sc,player2sc;
+    int move=1;
+    public framettt() {
+        initComponents();
+    }
+    //win and tie and messages
+     private int win_determination()
+    {
+        int flag=0;
+        String box1 = jButton1.getText();
+        String box2 = jButton2.getText();
+        String box3 = jButton3.getText();
+        String box4 = jButton4.getText();
+        String box5 = jButton5.getText();
+        String box6 = jButton6.getText();
+        String box7 = jButton7.getText();
+        String box8 = jButton8.getText();
+        String box9 = jButton9.getText();
+    
+    
+    if(box1==box2 && box1==box3)  //check for equality then sign and then declare winner
+    {
+        if(box1.equalsIgnoreCase("X"))
+        {
+        Xwins();
+        }
+        if(box1.equalsIgnoreCase("O"))
+        {
+            OWins();
+            flag=1;
+        }
+    }
+    
+     if(box4==box5 && box4==box6)  //check for equality then sign and then declare winner
+    {
+        if(box4.equalsIgnoreCase("X"))
+        {
+        Xwins();
+        }
+        if(box4.equalsIgnoreCase("O"))
+        {
+            OWins();
+            flag=1;
+        }
+    }
+     if(box7==box8 && box7==box9)  //check for equality then sign and then declare winner
+    {
+        if(box7.equalsIgnoreCase("X"))
+        {
+        Xwins();
+        }
+        if(box7.equalsIgnoreCase("O"))
+        {
+            OWins();
+            flag=1;
+        }
+    }
+     
+      if(box1==box4 && box1==box7)  //check for equality then sign and then declare winner
+    {
+        if(box1.equalsIgnoreCase("X"))
+        {
+        Xwins();
+        }
+        if(box1.equalsIgnoreCase("O"))
+        {
+            OWins();
+            flag=1;
+        }
+    }
+       if(box2==box5 && box2==box8)  //check for equality then sign and then declare winner
+    {
+        if(box2.equalsIgnoreCase("X"))
+        {
+        Xwins();
+        }
+        if(box2.equalsIgnoreCase("O"))
+        {
+            OWins();
+            flag=1;
+        }
+    }
+        if(box3==box6 && box3==box9)  //check for equality then sign and then declare winner
+    {
+        if(box3.equalsIgnoreCase("X"))
+        {
+        Xwins();
+        }
+        if(box3.equalsIgnoreCase("O"))
+        {
+            OWins();
+            flag=1;
+        }
+    }
+         if(box1==box5 && box1==box9)  //check for equality then sign and then declare winner
+    {
+        if(box1.equalsIgnoreCase("X"))
+        {
+        Xwins();
+        }
+        if(box1.equalsIgnoreCase("O"))
+        {
+            OWins();
+            flag=1;
+        }
+    }
+          if(box3==box5 && box3==box7)  //check for equality then sign and then declare winner
+    {
+        if(box3.equalsIgnoreCase("X"))
+        {
+        Xwins();
+        }
+        if(box3.equalsIgnoreCase("O"))
+        {
+            OWins();
+            flag=1;
+        }
+    }
+          return flag;
+    }
+
+     
+     
+     void Xwins()
+    {
+      JOptionPane.showMessageDialog(this,"X Wins!");  
+      player1sc++;
+      Reset();
+     
+      
+    }
+    void OWins()
+    {
+      JOptionPane.showMessageDialog(this,"O Wins!");  
+     player2sc++;
+      Reset();
+      
+      
+    }
+    int Tie()
+    {
+        int res=0;
+        String box1 = jButton1.getText();
+        String box2 = jButton2.getText();
+        String box3 = jButton3.getText();
+        String box4 = jButton4.getText();
+        String box5 = jButton5.getText();
+        String box6 = jButton6.getText();
+        String box7 = jButton7.getText();
+        String box8 = jButton8.getText();
+        String box9 = jButton9.getText();
+        
+        if(box1 !="" && box2 !="" && box3 !="" && box4 !="" && box5 !="" && box6 !="" && box7 !="" && box8 !="" && box9 !="" )
+        {
+            JOptionPane.showMessageDialog(this, "It's a Tie!");
+            
+            res=1;
+            Reset();
+        }
+        return res;
+    
+    }
+    void scdisplay()
+    {
+        score.setText("Vishesh:  " +String.valueOf(player1sc)+"  \t  Computer:" + String.valueOf(player2sc));
+    }
+    void Reset()
+    {
+        jButton3.setText("");
+        jButton4.setText("");
+        jButton5.setText("");
+        jButton6.setText("");
+        jButton7.setText("");
+        jButton8.setText("");
+        jButton9.setText("");
+        jButton1.setText("");
+        jButton2.setText("");
+       
+        scdisplay();
+        move = 1;
+     
+   
+    }
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        score = new java.awt.Label();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jButton3 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        jButton6 = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jButton8 = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
+        Computer = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CompVsPla");
+
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        score.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
+        score.setText("Score");
+        jPanel1.add(score, java.awt.BorderLayout.PAGE_START);
+        score.getAccessibleContext().setAccessibleName("label1");
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new java.awt.GridLayout(3, 3, 1, 1));
+
+        jPanel3.setLayout(new java.awt.BorderLayout());
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1, java.awt.BorderLayout.CENTER);
+
+        jPanel2.add(jPanel3);
+
+        jPanel4.setLayout(new java.awt.BorderLayout());
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton2, java.awt.BorderLayout.CENTER);
+
+        jPanel2.add(jPanel4);
+
+        jPanel5.setLayout(new java.awt.BorderLayout());
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jButton3, java.awt.BorderLayout.CENTER);
+
+        jPanel2.add(jPanel5);
+
+        jPanel6.setLayout(new java.awt.BorderLayout());
+
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton4, java.awt.BorderLayout.CENTER);
+
+        jPanel2.add(jPanel6);
+
+        jPanel7.setLayout(new java.awt.BorderLayout());
+
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton5, java.awt.BorderLayout.CENTER);
+
+        jPanel2.add(jPanel7);
+
+        jPanel8.setLayout(new java.awt.BorderLayout());
+
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(jButton6, java.awt.BorderLayout.CENTER);
+
+        jPanel2.add(jPanel8);
+
+        jPanel9.setLayout(new java.awt.BorderLayout());
+
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton7, java.awt.BorderLayout.CENTER);
+
+        jPanel2.add(jPanel9);
+
+        jPanel10.setLayout(new java.awt.BorderLayout());
+
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jButton8, java.awt.BorderLayout.CENTER);
+
+        jPanel2.add(jPanel10);
+
+        jPanel11.setLayout(new java.awt.BorderLayout());
+
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(jButton9, java.awt.BorderLayout.CENTER);
+
+        jPanel2.add(jPanel11);
+
+        jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
+
+        Computer.setText("Computer");
+        Computer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComputerActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addGap(0, 321, Short.MAX_VALUE)
+                .addComponent(Computer))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(Computer)
+                .addContainerGap(52, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel12, java.awt.BorderLayout.PAGE_END);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if(move %2 ==1)
+        { 
+            jButton1.setText("X");
+            move++;}
+        win_determination();
+       Tie();
+       
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+          if(move %2 ==1)
+        { 
+            jButton2.setText("X");
+            move++;}
+          win_determination();
+       Tie();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+          if(move %2 ==1)
+        { 
+            jButton3.setText("X");
+            move++;}
+          win_determination();
+       Tie();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+       if(move %2 ==1)
+        { 
+            jButton4.setText("X");
+            move++;}
+       win_determination();
+       Tie();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+         if(move %2 ==1)
+        { 
+            jButton5.setText("X");
+            move++;}
+         win_determination();
+       Tie();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+         if(move %2 ==1)
+        { 
+            jButton6.setText("X");
+            move++;}
+         win_determination();
+       Tie();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+         if(move %2 ==1)
+        { 
+            jButton7.setText("X");
+            move++;}
+         win_determination();
+       Tie();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+         if(move %2 ==1)
+        { 
+            jButton8.setText("X");
+            move++;}
+         win_determination();
+       Tie();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+         if(move %2 ==1)
+        { 
+            jButton9.setText("X");
+            move++;}
+         win_determination();
+       Tie();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void ComputerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComputerActionPerformed
+        // TODO add your handling code here:
+        if(move %2 ==0)
+        {
+            The_move();
+            move ++;
+        }
+     
+        win_determination();
+        Tie();
+    }//GEN-LAST:event_ComputerActionPerformed
+
+    void The_move()
+    {
+       
+       if(move<4)
+      {
+        String box1 = jButton1.getText();
+        String box2 = jButton2.getText();
+        String box3 = jButton3.getText();
+        String box4 = jButton4.getText();
+        String box5 = jButton5.getText();
+        String box6 = jButton6.getText();
+        String box7 = jButton7.getText();
+        String box8 = jButton8.getText();
+        String box9 = jButton9.getText();
+        
+          int randomNum=ThreadLocalRandom.current().nextInt(1,9);
+        System.out.print(randomNum);
+             switch(randomNum)
+             {
+     case 1: if(box1 !="X" && box1 != "O")
+     System.out.println("case1");
+     { jButton1.setText("O");
+    
+     }
+    
+    break;
+    case 2: if(box2 !="X" && box2 != "O")
+    { jButton2.setText("O");
+    System.out.println("case2");
+    }
+    
+    break;
+    case 3: if(box3 !="X" && box3 != "O")
+    { jButton3.setText("O");
+    System.out.println("case3");
+    }
+    
+    break;
+    case 4: if(box4 !="X" && box4 != "O")
+    { jButton4.setText("O");
+    System.out.println("case4");
+    }
+    
+    break;
+    case 5: if(box5 !="X" && box5 != "O")
+    {     System.out.println("case5");
+    jButton5.setText("O");
+
+    }
+    
+    break;
+    case 6: if(box6 !="X" && box6 != "O")
+    { jButton6.setText("O");
+    System.out.println("case6");
+    }
+    
+    break;
+    case 7: if(box7 !="X" && box7 != "O")
+    { jButton7.setText("O");
+    System.out.println("case7");
+    }
+    
+    break;
+    case 8: if(box8 !="X" && box8 != "O")
+    { jButton8.setText("O");
+    System.out.println("case8");
+    }
+    
+    break;
+    case 9: if(box9 !="X" && box9 != "O")
+    { jButton9.setText("O");
+    System.out.println("case9");
+    }
+    
+    break;
+    }
+    
+    
+        }
+       else{
+       
+     
+     
+        String box1 = jButton1.getText();
+        String box2 = jButton2.getText();
+        String box3 = jButton3.getText();
+        String box4 = jButton4.getText();
+        String box5 = jButton5.getText();
+        String box6 = jButton6.getText();
+        String box7 = jButton7.getText();
+        String box8 = jButton8.getText();
+        String box9 = jButton9.getText();
+           int res=0;
+    int blink=0;
+    
+    //CHECKINNG FOR WIN
+    
+ while(true)
+ {
+    
+    if(box1!="X" && box1!="O")
+    {
+     jButton1.setText("O");
+     res= wincal();
+     if(res==1)
+             {
+                 box1="O";                           //button1 khali hai par win is not possible
+                  jButton1.setText("O");            //agar 0 jeet raha hai to 1 warna else else me agar 0 hai to tie otherwise 2 hai to X jeet raha hai
+    
+                     blink=1;
+                     break;
+                     
+              }
+     
+    else
+             {
+                 res=Tiecal();
+                 if(res==1)
+                     {
+                        box1="O";
+                        jButton1.setText("O");
+     
+                                 blink=1;
+                                 break;
+    
+                        }
+                 else if(res==0)
+                 {
+                     jButton1.setText("X");
+                     res = wincal();
+                     jButton1.setText("");
+                     if(res==2)
+                     {
+                         jButton1.setText("O");
+                         break;
+                     }
+                 }
+                  else{  
+                     jButton1.setText("");}
+            }   
+    }
+            
+    
+   
+   if(box2!="X" && box2!="O")
+    {
+       jButton2.setText("O");
+     res= wincal();
+     if(res==1)
+             {
+                 box2="O";                           //button1 khali hai par win is not possible
+                  jButton2.setText("O");            //agar 0 jeet raha hai to 1 warna else else me agar 0 hai to tie otherwise 2 hai to X jeet raha hai
+                  
+                     blink=1;
+                     break;
+                     
+              }
+     
+    else
+             {
+                 res=Tiecal();
+                 if(res==1)
+                     {
+                        box1="O";
+                        jButton2.setText("O");
+     
+                                 blink=1;
+    
+                                 break; 
+                        }
+                 else if(res==0)
+                 {
+                     jButton2.setText("X");
+                     res = wincal();
+                     jButton2.setText("");
+                     if(res==2)
+                     {
+                         jButton2.setText("O");
+                         break;
+                     }
+                 }
+                  else{ jButton2.setText("");}
+            }   
+    }
+    if(box3!="X" && box3!="O")
+    {
+        
+    jButton3.setText("O");
+     res= wincal();
+     if(res==1)
+             {
+                 box3="O";                           //button1 khali hai par win is not possible
+                  jButton3.setText("O");            //agar 0 jeet raha hai to 1 warna else else me agar 0 hai to tie otherwise 2 hai to X jeet raha hai
+    
+                     blink=1;
+                      break;
+              }
+     
+    else
+             {
+                 res=Tiecal();
+                 if(res==1)
+                     {
+                        box1="O";
+                        jButton3.setText("O");
+     
+                                 blink=1;
+    
+                                 break;
+                           }
+                 else if(res==0)
+                 {
+                     jButton3.setText("X");
+                     res = wincal();
+                     jButton3.setText("");
+                     if(res==2)
+                     {
+                         jButton3.setText("O");
+                         break;
+                     }
+                 }
+                  else{ jButton3.setText("");}
+            }   
+    }
+    if(box4!="X" && box4!="O")
+    {
+    jButton4.setText("O");
+     res= wincal();
+     if(res==1)
+             {
+                 box4="O";                           //button1 khali hai par win is not possible
+                  jButton4.setText("O");            //agar 0 jeet raha hai to 1 warna else else me agar 0 hai to tie otherwise 2 hai to X jeet raha hai
+    
+                     blink=1;
+                      break;
+              }
+     
+    else
+             {
+                 res=Tiecal();
+                 if(res==1)
+                     {
+                        box4="O";
+                        jButton4.setText("O");
+     
+                                 blink=1;
+                                 break;
+    
+                        }
+                 else if(res==0)
+                 {
+                     jButton4.setText("X");
+                     res = wincal();
+                     jButton4.setText("");
+                     if(res==2)
+                     {
+                         jButton4.setText("O");
+                         break;
+                     }
+                 }
+                  else{ jButton4.setText("");}
+            }   
+    }
+    
+    if(box5!="X" && box5!="O")
+    {
+    jButton5.setText("O");
+     res= wincal();
+     if(res==1)
+             {
+                 box5="O";                           //button1 khali hai par win is not possible
+                  jButton5.setText("O");            //agar 0 jeet raha hai to 1 warna else else me agar 0 hai to tie otherwise 2 hai to X jeet raha hai
+    
+                     blink=1;
+                     break;
+              }
+     
+    else
+             {
+                 res=Tiecal();
+                 if(res==1)
+                     {
+                        box1="O";
+                        jButton5.setText("O");
+     
+                                 blink=1;
+    
+                                 break;
+                        }
+                 else if(res==0)
+                 {
+                     jButton5.setText("X");
+                     res = wincal();
+                     jButton5.setText("");
+                     if(res==2)
+                     {
+                         jButton5.setText("O");
+                         break;
+                     }
+                 }
+                  else{ jButton5.setText("");}
+            }   
+    }
+    if(box6!="X" && box6!="O")
+    {
+   jButton6.setText("O");
+     res= wincal();
+     if(res==1)
+             {
+                 box6="O";                           //button1 khali hai par win is not possible
+                  jButton6.setText("O");            //agar 0 jeet raha hai to 1 warna else else me agar 0 hai to tie otherwise 2 hai to X jeet raha hai
+    
+                     blink=1;
+                      break;
+              }
+     
+    else
+             {
+                 res=Tiecal();
+                 if(res==1)
+                     {
+                        box6="O";
+                        jButton6.setText("O");
+     
+                                 blink=1;
+                                 break;
+    
+                        }
+                 else if(res==0)
+                 {
+                     jButton6.setText("X");
+                     res = wincal();
+                     jButton6.setText("");
+                     if(res==2)
+                     {
+                         jButton6.setText("O");
+                         break;
+                     }
+                 }
+                  else{ jButton6.setText("");}
+            }   
+    }
+    if(box7!="X" && box7!="O")
+    {
+    jButton7.setText("O");
+     res= wincal();
+     if(res==1)
+             {
+                 box1="O";                           //button1 khali hai par win is not possible
+                  jButton7.setText("O");            //agar 0 jeet raha hai to 1 warna else else me agar 0 hai to tie otherwise 2 hai to X jeet raha hai
+    
+                     blink=1;
+                      break;
+              }
+     
+    else
+             {
+                 res=Tiecal();
+                 if(res==1)
+                     {
+                        box1="O";
+                        jButton7.setText("O");
+     
+                                 blink=1;
+                                 break;
+    
+                        }
+                 else if(res==0)
+                 {
+                     jButton7.setText("X");
+                     res = wincal();
+                     jButton7.setText("");
+                     if(res==2)
+                     {
+                         jButton7.setText("O");
+                         break;
+                     }
+                 }
+                  else{ jButton7.setText("");}
+            }   
+    }
+    if(box8!="X" && box8!="O")
+    {
+    jButton8.setText("O");
+     res= wincal();
+     if(res==1)
+             {
+                 box8="O";                           //button1 khali hai par win is not possible
+                  jButton8.setText("O");            //agar 0 jeet raha hai to 1 warna else else me agar 0 hai to tie otherwise 2 hai to X jeet raha hai
+    
+                     blink=1;
+                     break;
+              }
+     
+    else
+             {
+                 res=Tiecal();
+                 if(res==1)
+                     {
+                        box8="O";
+                        jButton8.setText("O");
+     
+                                 blink=1;
+                                 break;
+    
+                        }
+                 else if(res==0)
+                 {
+                     jButton8.setText("X");
+                     res = wincal();
+                     jButton8.setText("");
+                     if(res==2)
+                     {
+                         jButton8.setText("O");
+                         break;
+                     }
+                 }
+                  else{ jButton8.setText("");}
+            }   
+    }
+    if(box9!="X" && box9!="O")
+    {
+    jButton9.setText("O");
+     res= wincal();
+     if(res==1)
+             {
+                 box9="O";                           //button1 khali hai par win is not possible
+                  jButton9.setText("O");
+                    //agar 0 jeet raha hai to 1 warna else else me agar 0 hai to tie otherwise 2 hai to X jeet raha hai
+    
+                     blink=1;
+                      break;
+              }
+     
+    else
+             {
+                 res=Tiecal();
+                 if(res==1)
+                     {
+                        box1="O";
+                        jButton9.setText("O");
+     
+                                 blink=1;
+    
+                                 break;
+                        }
+                 else if(res==0)
+                 {
+                     jButton9.setText("X");
+                     res = wincal();
+                     jButton9.setText("");
+                     if(res==2)
+                     {
+                         jButton9.setText("O");
+                         break;
+                     }
+                 }
+                  else{ jButton9.setText("");}
+            }   
+    
+    } }}}
+    
+    //CHECKING FOR TIE
+    /* if(blink==0)
+    {
+    if(box1!="X" && box1!="O")
+    {
+    jButton1.setText("O");
+    res= Tie();
+    if(res==1)
+    {
+    box1="O";
+    jButton1.setText("O");
+    //turn="O";
+    blink=1;
+    
+    }
+    else
+    {
+    jButton1.setText("");}
+    }
+    else if(box2!="X" && box2!="O")
+    {
+    jButton2.setText("O");
+    res= Tie();
+    if(res==1)
+    {
+    box1="O";
+    jButton2.setText("O");
+    //turn="O";
+    blink=1;
+    
+    }
+    else
+    {
+    jButton2.setText("");}
+    }
+    else if(box3!="X" && box3!="O")
+    {
+    jButton3.setText("O");
+    res= Tie();
+    if(res==1)
+    {
+    box1="O";
+    jButton3.setText("O");
+    //turn="O";
+    blink=1;
+    
+    }
+    else
+    {
+    jButton3.setText("");}
+    }
+    else if(box4!="X" && box4!="O")
+    {
+    jButton4.setText("O");
+    res= Tie();
+    if(res==1)
+    {
+    box1="O";
+    jButton4.setText("O");
+    //turn="O";
+    blink=1;
+    }
+    else
+    {
+    jButton4.setText("");}
+    }
+    
+    else if(box5!="X" && box5!="O")
+    {
+    jButton5.setText("O");
+    res= Tie();
+    if(res==1)
+    {
+    box1="O";
+    jButton5.setText("O");
+    //turn="O";
+    blink=1;
+    }
+    else
+    {
+    jButton5.setText("");}
+    }
+    else if(box6!="X" && box6!="O")
+    {
+    jButton6.setText("O");
+    res= Tie();
+    if(res==1)
+    {
+    box1="O";
+    jButton6.setText("O");
+    //turn="O";
+    blink=1;
+    }
+    else
+    {
+    jButton6.setText("");}
+    }
+    else if(box7!="X" && box7!="O")
+    {
+    jButton7.setText("O");
+    res= Tie();
+    if(res==1)
+    {
+    box1="O";
+    jButton7.setText("O");
+    //turn="O";
+    blink=1;
+    }
+    else
+    {
+    jButton7.setText("");
+    }
+    }
+    else if(box8!="X" && box8!="O")
+    {
+    jButton8.setText("O");
+    res= Tie();
+    if(res==1)
+    {
+    box1="O";
+    jButton8.setText("O");
+    //turn="O";
+    blink=1;
+    }
+    else
+    {
+    jButton8.setText("");}
+    }
+    else if(box9!="X" && box9!="O")
+    {
+    jButton9.setText("O");
+    res=Tie();
+    if(res==1)
+    {
+    box1="O";
+    jButton9.setText("O");
+    
+    blink=1;
+    }
+    else
+    {
+    jButton9.setText("");}
+    
+    }
+    
+    
+    
+    }*/
+   
+    int wincal(){
+    
+     int flag=0;
+        String box1 = jButton1.getText();
+        String box2 = jButton2.getText();
+        String box3 = jButton3.getText();
+        String box4 = jButton4.getText();
+        String box5 = jButton5.getText();
+        String box6 = jButton6.getText();
+        String box7 = jButton7.getText();
+        String box8 = jButton8.getText();
+        String box9 = jButton9.getText();
+    
+    
+    if(box1==box2 && box1==box3)  //check for equality then sign and then declare winner
+    {
+        if(box1.equalsIgnoreCase("X"))
+        {
+        flag=2;
+        }
+        if(box1.equalsIgnoreCase("O"))
+        {
+            
+            flag=1;
+        }
+    }
+    
+    else if(box4==box5 && box4==box6)  //check for equality then sign and then declare winner
+    {
+        if(box4.equalsIgnoreCase("X"))
+        {
+         flag=2;
+        }
+        if(box4.equalsIgnoreCase("O"))
+        {
+            
+            flag=1;
+        }
+    }
+    else if(box7==box8 && box7==box9)  //check for equality then sign and then declare winner
+    {
+        if(box7.equalsIgnoreCase("X"))
+        {
+       flag=2;
+        }
+        if(box7.equalsIgnoreCase("O"))
+        {
+            
+            flag=1;
+        }
+    }
+     
+    else if(box1==box4 && box1==box7)  //check for equality then sign and then declare winner
+    {
+        if(box1.equalsIgnoreCase("X"))
+        {
+        flag=2;
+        }
+        if(box1.equalsIgnoreCase("O"))
+        {
+            
+            flag=1;
+        }
+    }
+    else   if(box2==box5 && box2==box8)  //check for equality then sign and then declare winner
+    {
+        if(box2.equalsIgnoreCase("X"))
+        {
+         flag=2;
+        }
+        if(box2.equalsIgnoreCase("O"))
+        {
+            
+            flag=1;
+        }
+    }
+      else  if(box3==box6 && box3==box9)  //check for equality then sign and then declare winner
+    {
+        if(box3.equalsIgnoreCase("X"))
+        {
+         flag=2;
+        }
+        if(box3.equalsIgnoreCase("O"))
+        {
+            
+            flag=1;
+        }
+    }
+      else    if(box1==box5 && box1==box9)  //check for equality then sign and then declare winner
+    {
+        if(box1.equalsIgnoreCase("X"))
+        {
+         flag=2;
+        }
+        if(box1.equalsIgnoreCase("O"))
+        {
+           
+            flag=1;
+        }
+    }
+       else   if(box3==box5 && box3==box7)  //check for equality then sign and then declare winner
+    {
+        if(box3.equalsIgnoreCase("X"))
+        {
+         flag=2;
+        }
+        if(box3.equalsIgnoreCase("O"))
+        {
+            
+            flag=1;
+        }
+    }
+          return flag;
+    }
+    
+     int Tiecal()
+    {
+        int res=0;
+        String box1 = jButton1.getText();
+        String box2 = jButton2.getText();
+        String box3 = jButton3.getText();
+        String box4 = jButton4.getText();
+        String box5 = jButton5.getText();
+        String box6 = jButton6.getText();
+        String box7 = jButton7.getText();
+        String box8 = jButton8.getText();
+        String box9 = jButton9.getText();
+        
+        if(box1 !="" && box2 !="" && box3 !="" && box4 !="" && box5 !="" && box6 !="" && box7 !="" && box8 !="" && box9 !="" )
+        {
+           
+            
+            res=1;
+            
+        }
+        return res;
+    
+    }
+    
+    
+    
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(framettt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(framettt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(framettt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(framettt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new framettt().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Computer;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private java.awt.Label score;
+    // End of variables declaration//GEN-END:variables
+}
